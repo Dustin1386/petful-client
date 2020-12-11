@@ -1,6 +1,6 @@
 import React from 'react'
 // import ApiService from '../../service/ApiService';
-import './Cats.css'
+// import './Cats.css'
 export default class Cats extends React.Component {
   render() {
     return(

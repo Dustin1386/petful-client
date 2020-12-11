@@ -1,5 +1,5 @@
 import React from 'react'
-import './Dogs.css'
+// import './Dogs.css'
 export default class Dogs extends React.Component {
   render(){
     return (

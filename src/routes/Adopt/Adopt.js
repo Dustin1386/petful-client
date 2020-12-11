@@ -3,9 +3,9 @@ import React from 'react';
 import config from '../../config';
 import Cats from '../../components/Cats/Cats';
 import Dogs from '../../components/Dogs/Dogs';
-import Users from '../../components/Users/Users';
-import ApiService from '../../service/ApiService';
-import './AdoptPage.css'
+// import Users from '../../components/Users/Users';
+import ApiService from '../../service/service';
+// import './AdoptPage.css'
 
 export default class AdoptPage extends React.Component {
   state = {
@@ -19,24 +19,24 @@ export default class AdoptPage extends React.Component {
     disabled: false
   };
 
-  findPosition = () => {
-    let count = 0;
-    const name = window.localStorage.getItem('name');
-    let currNode = this.state.users.first;
-    if(currNode){
-    while (currNode.data !== name && currNode.next !== null ) {
-      count++;
-      currNode = currNode.next;
-    }
+  // findPosition = () => {
+  //   let count = 0;
+  //   const name = window.localStorage.getItem('name');
+  //   // let currNode = this.state.users.first;
+  //   if(currNode){
+  //   while (currNode.data !== name && currNode.next !== null ) {
+  //     count++;
+  //     currNode = currNode.next;
+  //   }
 
-    if (currNode.data !== name) {
-      count++;
-      console.log('name not in list');
-    }
-    this.setState({ count });
-  }else {this.setState({count,  disabled: true });}
+  //   if (currNode.data !== name) {
+  //     count++;
+  //     console.log('name not in list');
+  //   }
+  //   this.setState({ count });
+  // }else {this.setState({count,  disabled: true });}
     
-  };
+  // };
 
   handleDogAdopt = () => {
     ApiService.handleDogAdopt()
@@ -138,7 +138,7 @@ export default class AdoptPage extends React.Component {
           />
         )}
           {/** */}
-          {this.state.count >= 1 && <Users users={this.state.users} />}
+          {/* {this.state.count >= 1 && <Users users={this.state.users} />} */}
 
         
         {this.state.dogNode !== null && (
